@@ -1,0 +1,56 @@
+$topPadding: .3rem;
+$smallText: .9rem;
+$smallerText: $smallText * 0.85;
+
+.socialCard{
+  width: 25rem;
+  color: #000000;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  .socialCard-top-row{
+
+    .socialCard-profile-picture{
+      width: 30%;
+      border-radius: 1rem;
+    }
+
+    .socialCard-names{
+      font-size: 65%;
+
+      .socialCard-names-username{
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .socialCard-names-name{
+        width: auto;
+      }
+    }
+  }
+
+  .socialCard-mid-row{
+    padding-top: $topPadding;
+    font-size: $smallText;
+  }
+
+  .socialCard-bottom-row{
+    padding-top: $topPadding;
+    font-size: $smallText;
+    color:rgba(0, 0, 0, 0.6);
+
+    .socialCard-bottom-row-icon{
+      margin: $topPadding;
+    }
+  }
+
+}
+
+@media (max-width: 700px){
+  .socialCard{
+    width: 15rem;
+    .socialCard-mid-row{
+      font-size: $smallerText;
+    }
+  }
+}
