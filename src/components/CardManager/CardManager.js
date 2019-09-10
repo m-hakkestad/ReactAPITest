@@ -12,7 +12,7 @@ class CardManager extends React.Component{
   }
 
   componentDidMount(){
-    fetch('https://my-json-server.typicode.com/m-hakkestad/data/posts')
+    fetch('https://my-json-server.typicode.com/m-hakkestad/data/postids')
     .then(response => response.json())
     .then(inData => this.setState({data: inData, fetched: true}));
   }
@@ -20,7 +20,7 @@ class CardManager extends React.Component{
 createCards(){
   let cards = []
   for(let i = 0; i < this.state.data.length; i++){
-    cards.push(<SocialCard data={this.state.data[i]}/>);
+    cards.push(<SocialCard key={i} data={this.state.data[i]}/>);
   }
   return cards;
 }

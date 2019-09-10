@@ -10,6 +10,14 @@ class SocialCard extends React.Component{
     this.state = props;
   }
 
+  componentDidMount(){
+    let url = 'https://my-json-server.typicode.com/m-hakkestad/data/posts/'
+    url += this.state.data
+    fetch(url)
+    .then(response => response.json())
+    .then(inData => this.setState({data: inData, fetched: true}));
+  }
+
   render(){
     return(
       <Card className="socialCard">

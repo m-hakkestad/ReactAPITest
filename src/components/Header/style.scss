@@ -1,0 +1,14 @@
+.Header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+
+  margin-bottom: 15rem;
+
+  .Header-icon{
+    color: rgb(59, 96, 175);
+    margin-right: .5rem;
+  }
+}
