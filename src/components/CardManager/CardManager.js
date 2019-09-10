@@ -12,7 +12,7 @@ class CardManager extends React.Component{
   }
 
   componentDidMount(){
-    fetch('https://my-json-server.typicode.com/m-hakkestad/data/postids')
+    fetch('http://10.0.0.187:3004/postids')
     .then(response => response.json())
     .then(inData => this.setState({data: inData, fetched: true}));
   }

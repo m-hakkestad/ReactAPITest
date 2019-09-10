@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Button from './components/sub-components/Button';
-import SocialCard from './components/SocialCard/SocialCard';
 import CardManager from './components/CardManager/CardManager';
 import Header from './components/Header/';
+import Footer from './components/Footer/';
 
 function App() {
 
@@ -13,6 +11,7 @@ function App() {
       <header className="App-header">
         <Header/>
         <CardManager/>
+        <Footer/>
 
       </header>
     </div>

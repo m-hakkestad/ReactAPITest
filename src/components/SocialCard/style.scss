@@ -3,7 +3,7 @@ $smallText: .9rem;
 $smallerText: $smallText * 0.85;
 
 .socialCard{
-  width: 25rem;
+  width: 95%;
   color: #000000;
   padding: 1rem;
   margin: 0 auto;
@@ -17,7 +17,7 @@ $smallerText: $smallText * 0.85;
     }
 
     .socialCard-names{
-      font-size: 65%;
+      font-size: 95%;
 
       .socialCard-names-username{
         color: rgba(0, 0, 0, 0.6);
@@ -48,7 +48,6 @@ $smallerText: $smallText * 0.85;
 
 @media (max-width: 700px){
   .socialCard{
-    width: 22rem;
     .socialCard-mid-row{
       font-size: $smallerText;
     }

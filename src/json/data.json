@@ -1,0 +1,280 @@
+{
+  "posts":[
+    {
+      "postid": 1,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 2,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 3,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 4,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 5,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 6,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 7,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 8,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 9,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 10,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 11,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 12,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 13,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 14,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 15,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 16,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },{
+      "postid": 17,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 18,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 19,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 20,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 21,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 22,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 23,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 24,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 25,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 26,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 27,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 28,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    },
+    {
+      "postid": 29,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+    },
+    {
+      "postid": 30,
+      "userid":2,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"15",
+      "likes":"7",
+      "retweets":"122"
+    },
+    {
+      "postid": 31,
+      "userid":3,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"3",
+      "likes":"32",
+      "retweets":"5"
+    },{
+      "postid": 32,
+      "userid":4,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"1",
+      "likes":"82",
+      "retweets":"12"
+    }
+  ],
+  "postids":[
+    1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32
+  ],
+  "users":[
+    {
+      "userid": 1,
+      "name": "Erik olsson",
+      "username": "Erkan67",
+      "profileImg": "https://i.pravatar.cc/75?img=1"
+    },
+    {
+      "userid":2,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "profileImg": "https://i.pravatar.cc/75?img=2"
+    },
+    {
+      "userid":3,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "profileImg": "https://i.pravatar.cc/75?img=3"
+    },
+    {
+      "userid":4,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "profileImg": "https://i.pravatar.cc/75?img=4"
+    }
+  ]
+}

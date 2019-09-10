@@ -1,0 +1,14 @@
+.Footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 25;
+
+  .Footer-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  }
+}
