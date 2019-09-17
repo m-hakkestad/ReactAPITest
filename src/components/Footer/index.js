@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
-import {Navbar, Nav, NavItem, NavLink } from 'reactstrap';
+import {Navbar, NavLink } from 'reactstrap';
 
-import {FaHome, FaSearch, FaPersonBooth, FaGithub} from 'react-icons/fa';
+import {FaHome, FaSearch, FaPlusCircle, FaGithub} from 'react-icons/fa';
 
 class Header extends React.Component{
   constructor(props){
@@ -15,7 +15,7 @@ class Header extends React.Component{
       <Navbar color="light" light>
             <NavLink href="#"><FaHome/></NavLink>
             <NavLink href="#"><FaSearch/></NavLink>
-            <NavLink href="#"><FaPersonBooth/></NavLink>
+            <NavLink href="#"><FaPlusCircle/></NavLink>
             <NavLink href="https://github.com/m-hakkestad/ReactAPITest"><FaGithub/></NavLink>
       </Navbar>
       </div>

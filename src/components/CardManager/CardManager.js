@@ -1,45 +1,45 @@
 import React from 'react';
 import './style.scss';
 import SocialCard from '.././SocialCard/SocialCard';
+import {Query} from 'react-apollo';
+import gql from 'graphql-tag';
 
 class CardManager extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      data: null,
-      fetched: false
     }
   }
-
-  componentDidMount(){
-    fetch('http://10.0.0.187:3004/postids')
-    .then(response => response.json())
-    .then(inData => this.setState({data: inData, fetched: true}));
-  }
-
-createCards(){
-  let cards = []
-  for(let i = 0; i < this.state.data.length; i++){
-    cards.push(<SocialCard key={i} data={this.state.data[i]}/>);
-  }
-  return cards;
-}
 
 
   render(){
-    if(this.state.fetched){
-      return(
-        <div className="Cards">
-        {this.createCards()}
-        </div>
-      )
-    }else{
-      return(
-        <div className="Cards">
-        Fetching posts
-        </div>
-      )
-    }
+    return(
+      <Query
+      query={gql`
+        {
+        posts{
+          id
+          text
+          comments
+          likes
+          retweets
+          user {
+            name
+            username
+            profileImg
+          }
+        }
+      }
+      `}
+    >
+      {({ loading, error, data }) => {
+        if (loading) return <p>Good things take time....</p>
+        if (error) return <p>Something went wrong...</p>
+
+        return <div className="Card-Column">{data.posts.map(post => <SocialCard className="Cards" post={post} key={post.id}/>)}</div>
+      }}
+    </Query>
+    )
   }
 }
 export default CardManager;
