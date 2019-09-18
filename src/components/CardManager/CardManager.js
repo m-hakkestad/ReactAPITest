@@ -17,26 +17,20 @@ class CardManager extends React.Component{
       <Query
       query={gql`
         {
-        posts{
+        newPosts{
           id
           text
-          comments
-          likes
-          retweets
-          user {
-            name
-            username
-            profileImg
-          }
+          score
+          date
         }
       }
       `}
     >
       {({ loading, error, data }) => {
         if (loading) return <p>Good things take time....</p>
-        if (error) return <p>Something went wrong...</p>
+        if (error) return `${error}`
 
-        return <div className="Card-Column">{data.posts.map(post => <SocialCard className="Cards" post={post} key={post.id}/>)}</div>
+        return <div className="Card-Column">{data.newPosts.map(post => <SocialCard className="Cards" post={post} key={post.id}/>)}</div>
       }}
     </Query>
     )

@@ -5,7 +5,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const Post = require('./models/post');
-const User = require('./models/user');
+const GraphQLDate = require('graphql-date')
 
 const {
     GraphQLSchema,
@@ -31,37 +31,13 @@ const PostType = new GraphQLObjectType({
     name: 'Post',
     description: 'This represents a post written by a user',
     fields: () => ({
-        id: {type: GraphQLNonNull(GraphQLInt)},
-        userid: {type: GraphQLNonNull(GraphQLInt)},
+        id: {type: GraphQLNonNull(GraphQLString)},
         text: {type: GraphQLNonNull(GraphQLString)},
-        comments: {type: GraphQLNonNull(GraphQLInt)},
-        likes: {type: GraphQLNonNull(GraphQLInt)},
-        retweets: {type: GraphQLNonNull(GraphQLInt)},
-        user: {
-            type: UserType,
-            resolve: (post) => {
-                return users.find(user => user.id === post.userid)
-            }
-        }
+        score: {type: GraphQLNonNull(GraphQLInt)},
+        date: {type: GraphQLNonNull(GraphQLDate)}
     })
 });
 
-const UserType = new GraphQLObjectType({
-    name: 'User',
-    description: 'An user',
-    fields: () => ({
-        id: {type: GraphQLNonNull(GraphQLInt)},
-        name: {type: GraphQLNonNull(GraphQLString)},
-        username: {type: GraphQLNonNull(GraphQLString)},
-        profileImg: {type: GraphQLNonNull(GraphQLString)},
-        posts: {
-            type: GraphQLList(PostType),
-            resolve: (user) =>{
-                return //posts.filter(post => post.id === user.id)
-            }
-        }
-    })
-});
 
 
 
@@ -75,25 +51,30 @@ const RootQueryType = new GraphQLObjectType({
             args: {
                 id: {type: GraphQLInt}
             },
-            resolve: (parent, args) => posts.find(post => post.id === post.id)
+            resolve(parent, args){
+              return Post.findById(args.id);
+            }
         },
         posts: {
             type: new GraphQLList(PostType),
             description: 'List of posts',
-            resolve: () => posts
+            resolve(){
+              return Post.find({});
+            }
         },
-        users: {
-            type: new GraphQLList(UserType),
-            description: 'List of all users',
-            resolve: () => users
+        newPosts: {
+          type: new GraphQLList(PostType),
+          description: 'List of posts',
+          resolve(){
+            return Post.find({}).sort({date:-1});
+          }
         },
-        user: {
-            type: UserType,
-            description: 'A single user',
-            args: {
-                id: {type: GraphQLInt}
-            },
-            resolve: (parent, args) => users.find(user => user.id === args.id)
+        popularPosts: {
+          type: new GraphQLList(PostType),
+          description: 'List of posts',
+          resolve(){
+            return Post.find({}).sort({score:-1});
+          }
         }
     })
 });
@@ -102,69 +83,35 @@ const RootMutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: 'Root mutation',
   fields: () => ({
-      addUser:{
-        type: UserType,
-        description: 'Add a user',
+      addPost:{
+        type: PostType,
+        description: 'Add a post',
         args:{
-          name: {type: GraphQLNonNull(GraphQLString)},
-          username: {type: GraphQLNonNull(GraphQLString)},
-          profileImg: {type: GraphQLNonNull(GraphQLString)}
+          text: {type: GraphQLNonNull(GraphQLString)}
         },
         resolve(parent,args){
-          let user = new User({
-            name: args.name,
-            username: args.username,
-            profileImg: args.profileImg
+          let post = new Post({
+            text: args.text,
+            score: 1,
+            date: Date.now()
           });
-          return user.save();
+          return post.save();
         }
       },
-      addPost: {
-          type: PostType,
-          description: 'Add a post',
-          args: {
-              text: {type: GraphQLNonNull(GraphQLString)},
-              userid: {type: GraphQLNonNull(GraphQLInt)}
-          },
-          resolve: (parent, args) => {
-              const post = { 
-                  id: posts.length + 1,
-                  userid: args.userid,
-                  text: args.text,
-                  comments: 0,
-                  likes: 0,
-                  retweets: 0
-              }
-              posts.push(post);
-              return post;
-          }
-      }
-  })
-})
-/*
-
-"id": 1,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-addAuthor: {
-            type: AuthorType,
-            description: 'Add a author',
-            args: {
-                name: {type: GraphQLNonNull(GraphQLString)}
-            },
-            resolve: (parent, args) => {
-                const author = { 
-                    id: authors.length + 1, 
-                    name: args.name
-                }
-                authors.push(author);
-                return author;
-            }
+      modifyPostScore:{
+        type: PostType,
+        description: 'Modify a posts score',
+        args:{
+          id: {type: GraphQLNonNull(GraphQLString)},
+          modifier: {type: GraphQLNonNull(GraphQLInt)}
+        },
+        resolve(parent,args){
+          return Post.findByIdAndUpdate(args.id,{$inc: {score: args.modifier}})
         }
-*/
+      }
+    })
+})
+
 const schema = new GraphQLSchema({
     query: RootQueryType,
     mutation: RootMutationType

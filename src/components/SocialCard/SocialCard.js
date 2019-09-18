@@ -1,20 +1,35 @@
 import React from 'react';
 import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
 import './styles.scss';
-import {FaHeart, FaComments, FaRetweet} from 'react-icons/fa';
+import {FaAngleUp, FaAngleDown} from 'react-icons/fa';
+import Upvote from '../sub-components/Upvote';
+import Downvote from '../sub-components/Downvote';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+TimeAgo.addLocale(en)
+
+
 
 class SocialCard extends React.Component{
   constructor(props){
     super(props);
+    const timeAgo = new TimeAgo('en');
+    this.updateScore = this.updateScore.bind(this);
 
+    let inDate = timeAgo.format(new Date(props.post.date))
     this.state = {
       id: props.post.id,
       text: props.post.text,
-      comments: props.post.comments,
-      likes: props.post.likes,
-      retweets: props.post.retweets,
-      user: props.post.user
+      date: inDate,
+      score: props.post.score,
+      update: false
     }
+  }
+
+  updateScore(inScore){
+    this.setState({
+      score: this.state.score + inScore
+    })
   }
 
 
@@ -24,11 +39,7 @@ class SocialCard extends React.Component{
 
         <Row className="socialCard-top-row">
           <Col>
-            <CardImg className="socialCard-profile-picture float-left" top width="2%" src={this.state.user.profileImg}/>
-          </Col>
-          <Col className="socialCard-names float-left">
-            <CardTitle className="socialCard-names-name" >{this.state.user.name}</CardTitle>
-            <CardSubtitle className="socialCard-names-username">@{this.state.user.username}</CardSubtitle>
+            <CardText className="socialCard-date">{this.state.date} ID:{this.state.id}</CardText>
           </Col>
         </Row>
 
@@ -39,11 +50,11 @@ class SocialCard extends React.Component{
         </Row>
 
         <Row className="socialCard-bottom-row">
-          <Col className="socialCard-bottom-row-info"><FaHeart className="socialCard-bottom-row-icon"/>{this.state.likes}</Col>
-          <Col className="socialCard-bottom-row-info"><FaComments className="socialCard-bottom-row-icon"/>{this.state.comments}</Col>
-          <Col className="socialCard-bottom-row-info"><FaRetweet className="socialCard-bottom-row-icon"/>{this.state.retweets}</Col>
+          <Col className="socialCard-bottom-row-info"><Upvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
+          <Col className="socialCard-bottom-row-info">{this.state.score}</Col>
+          <Col className="socialCard-bottom-row-info"><Downvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
         </Row>
-        
+
       </Card>
     )
   }
