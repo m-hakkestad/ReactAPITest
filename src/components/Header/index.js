@@ -24,17 +24,6 @@ class Header extends React.Component{
       <div className="Header">
         <Navbar color="light" light>
           <NavbarBrand href="/" className="mr-auto"><FaTwitter className="Header-icon"/>Twuttur</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="#">Log In</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/m-hakkestad/ReactAPITest">GitHub</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
         </Navbar>
       </div>
     )
