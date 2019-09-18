@@ -18,6 +18,9 @@ $smallerText: $smallText * 0.85;
 
     .socialCard-names{
       font-size: 95%;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       .socialCard-names-username{
         color: rgba(0, 0, 0, 0.6);
@@ -32,6 +35,7 @@ $smallerText: $smallText * 0.85;
   .socialCard-mid-row{
     padding-top: $topPadding;
     font-size: $smallText;
+    text-align: left;
   }
 
   .socialCard-bottom-row{

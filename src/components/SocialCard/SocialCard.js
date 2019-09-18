@@ -21,11 +21,11 @@ class SocialCard extends React.Component{
   render(){
     return(
       <Card className="socialCard">
+
         <Row className="socialCard-top-row">
           <Col>
             <CardImg className="socialCard-profile-picture float-left" top width="2%" src={this.state.user.profileImg}/>
           </Col>
-
           <Col className="socialCard-names float-left">
             <CardTitle className="socialCard-names-name" >{this.state.user.name}</CardTitle>
             <CardSubtitle className="socialCard-names-username">@{this.state.user.username}</CardSubtitle>
@@ -43,6 +43,7 @@ class SocialCard extends React.Component{
           <Col className="socialCard-bottom-row-info"><FaComments className="socialCard-bottom-row-icon"/>{this.state.comments}</Col>
           <Col className="socialCard-bottom-row-info"><FaRetweet className="socialCard-bottom-row-icon"/>{this.state.retweets}</Col>
         </Row>
+        
       </Card>
     )
   }

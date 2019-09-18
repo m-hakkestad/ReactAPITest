@@ -1,283 +1,12 @@
-const posts = [
-    {
-      "id": 1,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 2,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 3,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 4,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 5,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 6,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 7,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 8,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 9,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 10,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 11,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 12,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 13,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 14,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 15,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 16,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },{
-      "id": 17,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 18,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 19,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 20,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 21,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 22,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 23,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 24,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 25,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 26,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 27,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 28,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    },
-    {
-      "id": 29,
-      "userid":1,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"10",
-      "likes":"57",
-      "retweets":"12"
-    },
-    {
-      "id": 30,
-      "userid":2,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"15",
-      "likes":"7",
-      "retweets":"122"
-    },
-    {
-      "id": 31,
-      "userid":3,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"3",
-      "likes":"32",
-      "retweets":"5"
-    },{
-      "id": 32,
-      "userid":4,
-      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      "comments":"1",
-      "likes":"82",
-      "retweets":"12"
-    }
-  ]
-const users = [
-    {
-      "id": 1,
-      "name": "Erik olsson",
-      "username": "Erkan67",
-      "profileImg": "https://i.pravatar.cc/75?img=1"
-    },
-    {
-      "id":2,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "profileImg": "https://i.pravatar.cc/75?img=2"
-    },
-    {
-      "id":3,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "profileImg": "https://i.pravatar.cc/75?img=3"
-    },
-    {
-      "id":4,
-      "name": "Clementine Bauch",
-      "username": "Samantha",
-      "profileImg": "https://i.pravatar.cc/75?img=4"
-    }
-  ]
 
 /*------------FAKE DATA ABOVE----------------*/
 
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+const mongoose = require('mongoose');
+const Post = require('./models/post');
+const User = require('./models/user');
+
 const {
     GraphQLSchema,
     GraphQLObjectType,
@@ -289,6 +18,13 @@ const {
 
 const cors = require('cors');
 const app = express();
+
+mongoose.connect('mongodb+srv://hakke:twutter123@cluster0-tx7ij.mongodb.net/test?retryWrites=true&w=majority', 
+{ useNewUrlParser: true, });
+
+mongoose.connection.once('open',() => {
+  console.log('Connected to database');
+});
 
 
 const PostType = new GraphQLObjectType({
@@ -321,7 +57,7 @@ const UserType = new GraphQLObjectType({
         posts: {
             type: GraphQLList(PostType),
             resolve: (user) =>{
-                return posts.filter(post => post.id === user.id)
+                return //posts.filter(post => post.id === user.id)
             }
         }
     })
@@ -358,32 +94,62 @@ const RootQueryType = new GraphQLObjectType({
                 id: {type: GraphQLInt}
             },
             resolve: (parent, args) => users.find(user => user.id === args.id)
-        },
+        }
     })
 });
-/*
+
 const RootMutationType = new GraphQLObjectType({
-    name: 'Mutation',
-    description: 'Root mutation',
-    fields: () => ({
-        addPost: {
-            type: PostType,
-            description: 'Add a post',
-            args: {
-                name: {type: GraphQLNonNull(GraphQLString)},
-                authorId: {type: GraphQLNonNull(GraphQLInt)},
-            },
-            resolve: (parent, args) => {
-                const book = { 
-                    id: books.length + 1, 
-                    name: args.name,
-                    authorId: args.authorId,
-                }
-                books.push(book);
-                return book;
-            }
+  name: 'Mutation',
+  description: 'Root mutation',
+  fields: () => ({
+      addUser:{
+        type: UserType,
+        description: 'Add a user',
+        args:{
+          name: {type: GraphQLNonNull(GraphQLString)},
+          username: {type: GraphQLNonNull(GraphQLString)},
+          profileImg: {type: GraphQLNonNull(GraphQLString)}
         },
-        addAuthor: {
+        resolve(parent,args){
+          let user = new User({
+            name: args.name,
+            username: args.username,
+            profileImg: args.profileImg
+          });
+          return user.save();
+        }
+      },
+      addPost: {
+          type: PostType,
+          description: 'Add a post',
+          args: {
+              text: {type: GraphQLNonNull(GraphQLString)},
+              userid: {type: GraphQLNonNull(GraphQLInt)}
+          },
+          resolve: (parent, args) => {
+              const post = { 
+                  id: posts.length + 1,
+                  userid: args.userid,
+                  text: args.text,
+                  comments: 0,
+                  likes: 0,
+                  retweets: 0
+              }
+              posts.push(post);
+              return post;
+          }
+      }
+  })
+})
+/*
+
+"id": 1,
+      "userid":1,
+      "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "comments":"10",
+      "likes":"57",
+      "retweets":"12"
+addAuthor: {
             type: AuthorType,
             description: 'Add a author',
             args: {
@@ -398,12 +164,10 @@ const RootMutationType = new GraphQLObjectType({
                 return author;
             }
         }
-    })
-})
 */
 const schema = new GraphQLSchema({
     query: RootQueryType,
-    //mutation: RootMutationType
+    mutation: RootMutationType
 });
 
 app.use(cors());
