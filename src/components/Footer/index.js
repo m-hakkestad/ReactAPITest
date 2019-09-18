@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import {Navbar, NavLink } from 'reactstrap';
 
-import {FaHome, FaSearch, FaPlusCircle, FaGithub} from 'react-icons/fa';
+import {FaHome, FaSearch, FaPlusCircle, FaFire} from 'react-icons/fa';
 
 class Header extends React.Component{
   constructor(props){
@@ -14,9 +14,9 @@ class Header extends React.Component{
       <div className="Footer">
       <Navbar color="light" light>
             <NavLink href="#"><FaHome/></NavLink>
-            <NavLink href="#"><FaSearch/></NavLink>
+            <NavLink href="https://github.com/m-hakkestad/ReactAPITest"><FaFire/></NavLink>
             <NavLink href="#"><FaPlusCircle/></NavLink>
-            <NavLink href="https://github.com/m-hakkestad/ReactAPITest"><FaGithub/></NavLink>
+            <NavLink href="#"><FaSearch/></NavLink>
       </Navbar>
       </div>
     )
