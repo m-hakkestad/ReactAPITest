@@ -1,12 +1,19 @@
 import React from 'react';
 import './style.scss';
-import {Navbar, NavLink } from 'reactstrap';
+import {Navbar, NavLink, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import {FaHome, FaSearch, FaPlusCircle, FaFire} from 'react-icons/fa';
 
-class Header extends React.Component{
+class Footer extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+    }
+    this.toggleNewPost = this.toggleNewPost.bind(this);
+  }
+
+  toggleNewPost(){
+    this.props.onChange();
   }
 
   render(){
@@ -14,12 +21,12 @@ class Header extends React.Component{
       <div className="Footer">
       <Navbar color="light" light>
             <NavLink href="#"><FaHome/></NavLink>
-            <NavLink href="https://github.com/m-hakkestad/ReactAPITest"><FaFire/></NavLink>
-            <NavLink href="#"><FaPlusCircle/></NavLink>
+            <NavLink href="#"><FaFire/></NavLink>
+            <NavLink href="#" onClick={this.toggleNewPost}><FaPlusCircle/></NavLink>
             <NavLink href="#"><FaSearch/></NavLink>
       </Navbar>
       </div>
     )
   }
 }
-export default Header;
+export default Footer;

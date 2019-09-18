@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import CardManager from './components/CardManager/CardManager';
-import Header from './components/Header/';
-import Footer from './components/Footer/';
+
+import Main from './components/Main/Main';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 
@@ -16,14 +15,12 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
       <header className="App-header">
-        <Header/>
-        <CardManager/>
-        <Footer/>
-
+        <Main></Main>
       </header>
     </div>
     </ApolloProvider>
   );
 }
+
 
 export default App;
