@@ -49,7 +49,7 @@ class myModal extends React.Component{
             </ModalBody>
             
             <ModalFooter>
-            <Button color="primary" onClick={(e)=>{
+            <Button href="/" color="primary" onClick={(e)=>{
               PostMutation();
               this.toggleNewPost();
             }}>Post</Button>{' '}

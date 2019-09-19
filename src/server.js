@@ -74,7 +74,7 @@ const RootQueryType = new GraphQLObjectType({
           type: new GraphQLList(PostType),
           description: 'List of posts',
           resolve(){
-            return Post.find({}).sort({score:-1});
+            return Post.find({score: {$gt:-5}}).sort({score:-1});
           }
         }
     })

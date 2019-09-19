@@ -1,7 +1,10 @@
 import React from 'react';
 import './style.scss';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand} from 'reactstrap';
 import {FaTwitter} from 'react-icons/fa';
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 class Header extends React.Component{
   constructor(props){
@@ -9,8 +12,21 @@ class Header extends React.Component{
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: true,
+      title: ""
     };
+  }
+
+  componentDidMount(){
+    if(history.location.pathname === '/'){
+      this.setState({
+        title:"New"
+      })
+    }else if(history.location.pathname === '/hot'){
+      this.setState({
+        title:"Hot"
+      })
+    }
   }
 
   toggleNavbar() {
@@ -23,7 +39,7 @@ class Header extends React.Component{
     return(
       <div className="Header">
         <Navbar color="light" light>
-          <NavbarBrand href="/" className="mr-auto"><FaTwitter className="Header-icon"/>Twuttur</NavbarBrand>
+          <NavbarBrand href="/" className="mr-auto"><FaTwitter className="Header-icon"/>Twuttur / {this.state.title}</NavbarBrand>
         </Navbar>
       </div>
     )

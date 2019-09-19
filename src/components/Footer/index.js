@@ -19,11 +19,10 @@ class Footer extends React.Component{
   render(){
     return(
       <div className="Footer">
-      <Navbar color="light" light>
-            <NavLink href="/"><FaHome/></NavLink>
-            <NavLink href="/hot"><FaFire/></NavLink>
-            <NavLink href="#" onClick={this.toggleNewPost}><FaPlusCircle/></NavLink>
-            <NavLink href="#"><FaSearch/></NavLink>
+      <Navbar color="light" light className="Footer-nav">
+            <NavLink href="/" className="Footer-nav-link"><FaHome/></NavLink>
+            <NavLink href="#" onClick={this.toggleNewPost} className="Footer-nav-link"><FaPlusCircle/></NavLink>
+            <NavLink href="/hot" className="Footer-nav-link"><FaFire/></NavLink>
       </Navbar>
       </div>
     )
