@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.scss';
-import SocialCard from '.././SocialCard/SocialCard';
+import SocialCard from '../SocialCard/SocialCard';
 import {Query} from 'react-apollo';
 import gql from 'graphql-tag';
 
-class CardManager extends React.Component{
+class NewPostsManager extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -36,4 +36,4 @@ class CardManager extends React.Component{
     )
   }
 }
-export default CardManager;
+export default NewPostsManager;

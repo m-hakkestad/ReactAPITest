@@ -1,9 +1,11 @@
 import React from 'react';
 import './style.scss';
-import CardManager from '../CardManager/CardManager';
+import NewPostsManager from '../CardManagers/NewPostsManager';
+import PopularPostsManager from '../CardManagers/PopularPostsManager';
 import Header from '../Header';
 import Footer from '../Footer';
 import Modal from '../Modal';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Main extends React.Component{
   constructor(props){
@@ -25,10 +27,14 @@ class Main extends React.Component{
   render(){
     return(
         <div >
+          <Router>
             <Header/>
-            <CardManager/>
+            <Route exact path="/" component={NewPostsManager}/>
+            <Route exact path="/hot" component={PopularPostsManager}/>
             <Modal open={this.state.newPost} onChange={this.toggleNewPost.bind(this)}/>
             <Footer onChange={this.toggleNewPost.bind(this)}/>
+          </Router>
+            
         </div>
         
     )
