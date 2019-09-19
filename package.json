@@ -25,19 +25,22 @@
     "react-apollo": "^3.1.1",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "reactstrap": "^8.0.1",
     "timeago.js": "^4.0.0-beta.2",
     "typescript": "^3.6.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "client-install": "npm install --prefix client",    
+    "start": "node src/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon src/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start"
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "eslintConfig": {
     "extends": "react-app"

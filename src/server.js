@@ -5,7 +5,8 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const Post = require('./models/post');
-const GraphQLDate = require('graphql-date')
+const GraphQLDate = require('graphql-date');
+const path = require('path');
 
 const {
     GraphQLSchema,
@@ -123,5 +124,13 @@ app.use('/graphql', expressGraphQL({
     graphiql: true
 }));
 
+if(process.env.NODE_ENV === 'production') { 
+  app.use(express.static(path.join(__dirname, 'client/build')));  
+    app.get('*', (req, res) => {    
+      res.sendfile(path.join(__dirname = 'client/build/index.html'));  })}
+
+app.get('*', (req, res) => {    
+  res.sendfile(path.join(__dirname = 'client/build/index.html'));  });
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT,() => console.log('Server running'))
+app.listen(PORT,() => console.log(`🚀 Server ready at ${PORT}`))
