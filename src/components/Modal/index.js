@@ -1,5 +1,19 @@
 import React from 'react';
-import {Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+import {Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Input } from 'reactstrap';
+
+import gql from 'graphql-tag';
+import {Mutation} from 'react-apollo';
+
+const POST_MUTATION = gql`
+  mutation PostMutation($text: String!){
+    addPost(text: $text){
+        id
+        text
+        score
+        date
+    }
+  }
+`;
 
 
 class myModal extends React.Component{
@@ -13,22 +27,37 @@ class myModal extends React.Component{
 
   toggleNewPost(){
     this.props.onChange();
+    this.setState({
+      text: ""
+    })
   }
 
   render(){
+    const text = this.state.text;
     return(
-        <Modal isOpen={this.props.open} toggle={this.toggleNewPost} className={this.props.className}>
+      <Mutation mutation={POST_MUTATION} variables={{text}}>
+        {PostMutation => (
+            <Modal isOpen={this.props.open} toggle={this.toggleNewPost} className={this.props.className}>
             <ModalHeader toggle={this.toggleNewPost}>Add a new post</ModalHeader>
 
             <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Form>
+                <FormGroup>
+                  <Input type="textarea" name="text" id="exampleText"  onChange={(e) => this.setState({text: e.target.value})}></Input>
+                </FormGroup>
+              </Form>
             </ModalBody>
             
             <ModalFooter>
-            <Button color="primary" onClick={this.toggleNewPost}>Do Something</Button>{' '}
+            <Button color="primary" onClick={(e)=>{
+              PostMutation();
+              this.toggleNewPost();
+            }}>Post</Button>{' '}
             <Button color="secondary" onClick={this.toggleNewPost}>Cancel</Button>
             </ModalFooter>
         </Modal>
+        )}
+      </Mutation>
     )
   }
 }

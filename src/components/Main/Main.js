@@ -19,6 +19,7 @@ class Main extends React.Component{
     this.setState(prevState=> ({
       newPost: !prevState.newPost
     }))
+    this.forceUpdate();
   }
 
   render(){
