@@ -32,15 +32,15 @@
     "typescript": "^3.6.2"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",    
+    "client-install": "npm install ",    
     "start": "node src/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon src/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "client": "npm start ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
