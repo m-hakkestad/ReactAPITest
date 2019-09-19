@@ -60,5 +60,8 @@
   "devDependencies": {
     "nodemon": "^1.19.2"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "node": "12.9.1"
+  }
 }
