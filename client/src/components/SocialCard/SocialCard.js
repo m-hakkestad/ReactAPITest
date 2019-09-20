@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
 import './styles.scss';
-import {FaAngleUp, FaAngleDown} from 'react-icons/fa';
+import {FaComment} from 'react-icons/fa';
 import Upvote from '../sub-components/Upvote';
 import Downvote from '../sub-components/Downvote';
 import TimeAgo from 'javascript-time-ago'
@@ -22,6 +22,8 @@ class SocialCard extends React.Component{
       text: props.post.text,
       date: inDate,
       score: props.post.score,
+      commentids: props.post.commentids,
+      comments: props.post.comments,
       update: false
     }
   }
@@ -53,6 +55,7 @@ class SocialCard extends React.Component{
           <Col className="socialCard-bottom-row-info"><Upvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
           <Col className="socialCard-bottom-row-info">{this.state.score}</Col>
           <Col className="socialCard-bottom-row-info"><Downvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
+          <Col className="socialCard-bottom-row-info"><FaComment/>{this.state.commentids.length}</Col>
         </Row>
 
       </Card>

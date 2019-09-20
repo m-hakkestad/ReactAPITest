@@ -5,6 +5,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
 const Post = require('./models/post');
+const Comment = require('./models/comment');
 const GraphQLDate = require('graphql-date');
 const path = require('path');
 
@@ -35,8 +36,33 @@ const PostType = new GraphQLObjectType({
         id: {type: GraphQLNonNull(GraphQLString)},
         text: {type: GraphQLNonNull(GraphQLString)},
         score: {type: GraphQLNonNull(GraphQLInt)},
-        date: {type: GraphQLNonNull(GraphQLDate)}
+        date: {type: GraphQLNonNull(GraphQLDate)},
+        commentids: {type: GraphQLList(GraphQLString)},
+        comments: {
+          type: GraphQLList(CommentType),
+          resolve: (post) => {
+            return Comment.find({"_id:":{"$in": post.commentids}})
+          }
+        }
     })
+});
+
+const CommentType = new GraphQLObjectType({
+  name: 'Comment',
+  description: 'This represents a comment on a post',
+  fields: () => ({
+    id: {type: GraphQLNonNull(GraphQLString)},
+    text: {type: GraphQLNonNull(GraphQLString)},
+    score: {type: GraphQLNonNull(GraphQLInt)},
+    date: {type: GraphQLNonNull(GraphQLDate)},
+    postid: {type: GraphQLNonNull(GraphQLString)},
+    post: {
+      type: PostType,
+      resolve: (comment) => {
+        return Post.findById(comment.postid)
+      }
+    }
+  })
 });
 
 
@@ -50,7 +76,7 @@ const RootQueryType = new GraphQLObjectType({
             type: PostType,
             description: 'A single post',
             args: {
-                id: {type: GraphQLInt}
+                id: {type: GraphQLString}
             },
             resolve(parent, args){
               return Post.findById(args.id);
@@ -75,6 +101,23 @@ const RootQueryType = new GraphQLObjectType({
           description: 'List of posts',
           resolve(){
             return Post.find({score: {$gt:-5}}).sort({score:-1});
+          }
+        },
+        comments:{
+          type: new GraphQLList(CommentType),
+          description: 'A list of all comments',
+          resolve(){
+            return Comment.find({})
+          }
+        },
+        comment:{
+          type: CommentType,
+          description: 'A comment on a post',
+          args: {
+            id: {type: GraphQLString}
+          },
+          resolve(parent, args){
+            return Comment.findById(args.id);
           }
         }
     })
@@ -108,6 +151,38 @@ const RootMutationType = new GraphQLObjectType({
         },
         resolve(parent,args){
           return Post.findByIdAndUpdate(args.id,{$inc: {score: args.modifier}})
+        }
+      },
+      addComment:{
+        type: CommentType,
+        description: 'Add a comment',
+        args:{
+          postid: {type: GraphQLNonNull(GraphQLString)},
+          text: {type: GraphQLNonNull(GraphQLString)}
+        },
+        resolve(parent,args){
+          let comment = new Comment({
+            postid: args.postid,
+            text: args.text,
+            score: 1,
+            date: Date.now()
+          })
+          Post.findByIdAndUpdate(args.postid,{$push: {commentids: comment.id}}, function(err, result){
+            console.log("Comment added");
+          });
+
+          return comment.save();
+        }
+      },
+      modifyCommentScore:{
+        type: CommentType,
+        description: 'Modify a posts score',
+        args:{
+          id: {type: GraphQLNonNull(GraphQLString)},
+          modifier: {type: GraphQLNonNull(GraphQLInt)}
+        },
+        resolve(parent,args){
+          return Comment.findByIdAndUpdate(args.id,{$inc: {score: args.modifier}})
         }
       }
     })

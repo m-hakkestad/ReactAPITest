@@ -22,6 +22,10 @@ class PopularPostsManager extends React.Component{
           text
           score
           date
+          commentids
+          comments{
+            text
+          }
         }
       }
       `}

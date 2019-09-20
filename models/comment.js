@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const postSchema = new Schema({
+const commentSchema = new Schema({
     text: String,
     score: Number,
     date: Date,
-    commentids: [String]
+    postid: String
 });
 
-module.exports = mongoose.model('Post',postSchema);
+module.exports = mongoose.model('Comment',commentSchema);
