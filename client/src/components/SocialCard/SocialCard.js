@@ -56,7 +56,7 @@ class SocialCard extends React.Component{
           <Col className="socialCard-bottom-row-info"><Upvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
           <Col className="socialCard-bottom-row-info">{this.state.score}</Col>
           <Col className="socialCard-bottom-row-info"><Downvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
-          <Col className="socialCard-bottom-row-info"><Link to={`/post/${this.state.id}`}><FaComment/>{this.state.commentids.length}</Link></Col>
+          <Col className="socialCard-bottom-row-info"><Link to={`/post/${this.state.id}`} className="comment"><FaComment/>{this.state.commentids.length}</Link></Col>
         </Row>
 
         <Route path={`/post/${this.state.id}`} Component={SocialCard} ></Route>
