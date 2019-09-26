@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './styles.scss';
 import {FaComment} from 'react-icons/fa';
 import Upvote from '../sub-components/Upvote';
@@ -55,9 +56,10 @@ class SocialCard extends React.Component{
           <Col className="socialCard-bottom-row-info"><Upvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
           <Col className="socialCard-bottom-row-info">{this.state.score}</Col>
           <Col className="socialCard-bottom-row-info"><Downvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
-          <Col className="socialCard-bottom-row-info"><FaComment/>{this.state.commentids.length}</Col>
+          <Col className="socialCard-bottom-row-info"><Link to={`/post/${this.state.id}`}><FaComment/>{this.state.commentids.length}</Link></Col>
         </Row>
 
+        <Route path={`/post/${this.state.id}`} Component={SocialCard} ></Route>
       </Card>
     )
   }

@@ -4,6 +4,7 @@ import {Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Inp
 import gql from 'graphql-tag';
 import {Mutation} from 'react-apollo';
 
+
 const POST_MUTATION = gql`
   mutation PostMutation($text: String!){
     addPost(text: $text){

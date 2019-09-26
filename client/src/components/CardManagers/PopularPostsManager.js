@@ -36,6 +36,7 @@ class PopularPostsManager extends React.Component{
 
         return <div className="Card-Column">{data.popularPosts.map(post => <SocialCard className="Cards" post={post} key={post.id}/>)}</div>
       }}
+
     </Query>
     )
   }

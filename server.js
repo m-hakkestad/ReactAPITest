@@ -41,7 +41,9 @@ const PostType = new GraphQLObjectType({
         comments: {
           type: GraphQLList(CommentType),
           resolve: (post) => {
-            return Comment.find({"_id:":{"$in": post.commentids}})
+            return Comment.find({"_id:":{"$in": post.commentids}}, function(req,res){
+              console.log(req);
+            })
           }
         }
     })
