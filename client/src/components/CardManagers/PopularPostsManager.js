@@ -24,7 +24,9 @@ class PopularPostsManager extends React.Component{
           date
           commentids
           comments{
+            id
             text
+            score
           }
         }
       }
@@ -34,7 +36,7 @@ class PopularPostsManager extends React.Component{
         if (loading) return <p>Good things ta5ke time....</p>
         if (error) return `${error}`
 
-        return <div className="Card-Column">{data.popularPosts.map(post => <SocialCard className="Cards" post={post} key={post.id}/>)}</div>
+        return <div className="Card-Column">{data.popularPosts.map(post => <SocialCard className="Cards" flow={true} post={post} key={post.id}/>)}</div>
       }}
 
     </Query>

@@ -13,20 +13,9 @@ class Header extends React.Component{
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       collapsed: true,
-      title: ""
+      title: props.title
     };
-  }
 
-  componentDidMount(){
-    if(history.location.pathname === '/'){
-      this.setState({
-        title:"New"
-      })
-    }else if(history.location.pathname === '/hot'){
-      this.setState({
-        title:"Hot"
-      })
-    }
   }
 
   toggleNavbar() {

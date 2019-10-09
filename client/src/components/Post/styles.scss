@@ -1,0 +1,14 @@
+.post{
+    padding-bottom: 15%;
+    padding-top: 9%;
+    z-index: 5;
+    .post-og{
+        z-index: 0;
+    }
+
+    .comments{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}

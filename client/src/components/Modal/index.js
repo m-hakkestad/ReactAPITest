@@ -16,12 +16,23 @@ const POST_MUTATION = gql`
   }
 `;
 
+const COMMENT_MUTATION = gql`
+  mutation CommentMutation($id: String!, $text: String!){
+    addPost(id: $id, text: $text){
+        id
+        text
+        date
+    }
+  }
+`;
+
 
 class myModal extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      text: ""
+      text: "",
+      post: props.post
     }
     this.toggleNewPost = this.toggleNewPost.bind(this);
   }
@@ -35,31 +46,36 @@ class myModal extends React.Component{
 
   render(){
     const text = this.state.text;
-    return(
-      <Mutation mutation={POST_MUTATION} variables={{text}}>
-        {PostMutation => (
-            <Modal isOpen={this.props.open} toggle={this.toggleNewPost} className={this.props.className}>
-            <ModalHeader toggle={this.toggleNewPost}>Add a new post</ModalHeader>
 
-            <ModalBody>
-              <Form>
-                <FormGroup>
-                  <Input type="textarea" name="text" id="exampleText"  onChange={(e) => this.setState({text: e.target.value})}></Input>
-                </FormGroup>
-              </Form>
-            </ModalBody>
-            
-            <ModalFooter>
-            <Button href="/" color="primary" onClick={(e)=>{
-              PostMutation();
-              this.toggleNewPost();
-            }}>Post</Button>{' '}
-            <Button color="secondary" onClick={this.toggleNewPost}>Cancel</Button>
-            </ModalFooter>
-        </Modal>
-        )}
-      </Mutation>
-    )
+    if(this.state.post){
+      return(
+        <Mutation mutation={POST_MUTATION} variables={{text}}>
+          {PostMutation => (
+              <Modal isOpen={this.props.open} toggle={this.toggleNewPost} className={this.props.className}>
+              <ModalHeader toggle={this.toggleNewPost}>Add a new post</ModalHeader>
+
+              <ModalBody>
+                <Form>
+                  <FormGroup>
+                    <Input type="textarea" name="text" id="exampleText"  onChange={(e) => this.setState({text: e.target.value})}></Input>
+                  </FormGroup>
+                </Form>
+              </ModalBody>
+              
+              <ModalFooter>
+              <Button href="/" color="primary" onClick={(e)=>{
+                PostMutation();
+                this.toggleNewPost();
+              }}>Post</Button>{' '}
+              <Button color="secondary" onClick={this.toggleNewPost}>Cancel</Button>
+              </ModalFooter>
+          </Modal>
+          )}
+        </Mutation>
+      )
+    }else{
+      
+    }
   }
 }
 export default myModal;
