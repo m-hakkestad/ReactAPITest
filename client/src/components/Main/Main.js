@@ -29,7 +29,7 @@ class Main extends React.Component{
     return(
         <div >
           <Router>
-            <Header title={window.location.href.replace("http://localhost:3000/","")}/>
+            <Header title={"The best"}/>
             <Route exact path="/" component={NewPostsManager}/>
             <Route exact path="/hot" component={PopularPostsManager}/>
             <Route exact path="/post/:id" component={Post}/>
