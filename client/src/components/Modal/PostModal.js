@@ -27,12 +27,11 @@ const COMMENT_MUTATION = gql`
 `;
 
 
-class myModal extends React.Component{
+class PostModal extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      text: "",
-      post: props.post
+      text: ""
     }
     this.toggleNewPost = this.toggleNewPost.bind(this);
   }
@@ -46,8 +45,6 @@ class myModal extends React.Component{
 
   render(){
     const text = this.state.text;
-
-    if(this.state.post){
       return(
         <Mutation mutation={POST_MUTATION} variables={{text}}>
           {PostMutation => (
@@ -73,9 +70,6 @@ class myModal extends React.Component{
           )}
         </Mutation>
       )
-    }else{
-      
-    }
   }
 }
-export default myModal;
+export default PostModal;

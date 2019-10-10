@@ -5,31 +5,22 @@ import PopularPostsManager from '../CardManagers/PopularPostsManager';
 import Post from '../Post';
 import Header from '../Header';
 import Footer from '../Footer';
-import Modal from '../Modal';
+import PostModal from '../Modal/PostModal';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Main extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      newPost: false,
-      post: true
+      newPost: false
     }
 
     this.toggleNewPost = this.toggleNewPost.bind(this);
-    this.togglePostOrComment = this.togglePostOrComment.bind(this);
   }
 
   toggleNewPost(){
     this.setState(prevState=> ({
       newPost: !prevState.newPost
-    }))
-    this.forceUpdate();
-  }
-
-  togglePostOrComment(){
-    this.setState(prevState=> ({
-      post: !prevState.post
     }))
     this.forceUpdate();
   }
@@ -42,8 +33,8 @@ class Main extends React.Component{
             <Route exact path="/" component={NewPostsManager}/>
             <Route exact path="/hot" component={PopularPostsManager}/>
             <Route exact path="/post/:id" component={Post}/>
-            <Modal open={this.state.newPost} onChange={this.toggleNewPost.bind(this)} post={this.state.post}/>
-            <Footer onChange={this.toggleNewPost.bind(this)} togglePost={this.togglePostOrComment.bind(this)}/>
+            <PostModal open={this.state.newPost} onChange={this.toggleNewPost.bind(this)}/>
+            <Footer onChange={this.toggleNewPost.bind(this)}/>
           </Router>
             
         </div>
