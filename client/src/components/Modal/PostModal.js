@@ -16,16 +16,6 @@ const POST_MUTATION = gql`
   }
 `;
 
-const COMMENT_MUTATION = gql`
-  mutation CommentMutation($id: String!, $text: String!){
-    addPost(id: $id, text: $text){
-        id
-        text
-        date
-    }
-  }
-`;
-
 
 class PostModal extends React.Component{
   constructor(props){

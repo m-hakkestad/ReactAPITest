@@ -28,7 +28,7 @@ class Post extends React.Component{
     this.setState(prevState => ({
       newComment: !prevState.newComment
     }))
-    return <Redirect to='/'/>
+    this.forceUpdate();
   }
 
   componentDidMount(){
@@ -41,9 +41,8 @@ class Post extends React.Component{
       return (
         <div className="post">
           <SocialCard className="post-og" post={this.state.data} flow={false}/>
-          
           <Button className="post-button" onClick={this.toggleNewComment} color="primary" size="lg">Add Comment</Button>
-          <Comments data={this.state.data}/>
+          <Comments id={this.state.data.id}/>
           <CommentModal open={this.state.newComment} onChange={this.toggleNewComment.bind(this)} id={this.state.data.id}/>
         </div>
       )

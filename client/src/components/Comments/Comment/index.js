@@ -2,22 +2,26 @@ import React from 'react';
 import './styles.scss';
 import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
 
+import TimeAgo from 'javascript-time-ago'
 class Comment extends React.Component{
   constructor(props){
       super(props);
+
+    const timeAgo = new TimeAgo('en');
+      var date = timeAgo.format(new Date(props.data.date));
       this.state = {
-          data: props.data
+          data: props.data,
+          formDate: date
       }
   }
 
 
   render(){
-      console.log(this.state)
     return(
          <Card className="comment">
             <Row>
                 <Col>
-                    <CardText className="comment-date">{this.state.data.formdate} ID:{this.state.data.id}</CardText>
+                    <CardText className="comment-date">{this.state.formDate} ID:{this.state.data.id}</CardText>
                 </Col>
             </Row>
 
