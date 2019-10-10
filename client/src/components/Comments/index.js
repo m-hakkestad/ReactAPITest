@@ -31,6 +31,6 @@ export default function Comments({id}){
   console.log(data.post.comments.length)
   refetch()
   return(
-    <Card className="comments" style={{backgroundColor:"gainsboro"}}>{data.post.comments.map(comment => <Comment data={comment} key={comment.id}/>)}</Card>
+    <div className="comments" style={{backgroundColor:"gainsboro"}}>{data.post.comments.map(comment => <Comment data={comment} key={comment.id}/>)}</div>
   )
 }
