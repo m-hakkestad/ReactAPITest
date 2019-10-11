@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Card, CardText, Row, Col } from 'reactstrap';
+import { BrowserRouter as Link } from "react-router-dom";
 import './styles.scss';
 import {FaComment} from 'react-icons/fa';
 import Upvote from '../sub-components/Upvote';
 import Downvote from '../sub-components/Downvote';
-import Post from '../Post';
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 TimeAgo.addLocale(en)

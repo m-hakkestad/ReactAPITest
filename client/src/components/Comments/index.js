@@ -1,9 +1,8 @@
 import React from 'react';
 import './styles.scss';
 import Comment from './Comment'
-import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
 
-import {Query, useQuery} from 'react-apollo';
+import {useQuery} from 'react-apollo';
 import gql from 'graphql-tag';
 
 const GET_COMMENTS = gql`
@@ -19,7 +18,6 @@ const GET_COMMENTS = gql`
 `;
 
 export default function Comments({id}){
-  console.log("comments")
   const {data, loading, error, refetch} = useQuery(
     GET_COMMENTS,
     {variables: {id}},
@@ -27,8 +25,6 @@ export default function Comments({id}){
   );
   if(loading) return <p>Loading..</p>
   if(error) return <p>Error {error.message}</p>
-  console.log("Return commm")
-  console.log(data.post.comments.length)
   refetch()
   return(
     <div className="comments" style={{backgroundColor:"gainsboro"}}>{data.post.comments.map(comment => <Comment data={comment} key={comment.id}/>)}</div>

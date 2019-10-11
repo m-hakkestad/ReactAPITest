@@ -6,7 +6,7 @@ import Post from '../Post';
 import Header from '../Header';
 import Footer from '../Footer';
 import PostModal from '../Modal/PostModal';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class Main extends React.Component{
   constructor(props){

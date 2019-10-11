@@ -35,7 +35,6 @@ class CommentModal extends React.Component{
   }
 
   render(){
-    const text = this.state.text;
       return(
         <Mutation mutation={COMMENT_MUTATION} >
           {CommentMutation => (

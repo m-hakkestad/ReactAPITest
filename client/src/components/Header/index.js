@@ -1,10 +1,7 @@
 import React from 'react';
 import './style.scss';
-import { Navbar, NavbarToggler, NavbarBrand} from 'reactstrap';
+import { Navbar, NavbarBrand} from 'reactstrap';
 import {FaTwitter} from 'react-icons/fa';
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory();
 
 class Header extends React.Component{
   constructor(props){

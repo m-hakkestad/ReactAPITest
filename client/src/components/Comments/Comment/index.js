@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import { Card, CardTitle, CardImg, CardSubtitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardText, Row, Col } from 'reactstrap';
 
 import TimeAgo from 'javascript-time-ago'
 class Comment extends React.Component{

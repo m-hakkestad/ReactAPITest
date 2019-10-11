@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
-import {Navbar, NavLink, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {Navbar, NavLink} from 'reactstrap';
 
-import {FaHome, FaSearch, FaPlusCircle, FaFire} from 'react-icons/fa';
+import {FaHome, FaPlusCircle, FaFire} from 'react-icons/fa';
 
 class Footer extends React.Component{
   constructor(props){
