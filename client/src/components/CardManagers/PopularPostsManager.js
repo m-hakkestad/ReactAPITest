@@ -11,6 +11,10 @@ class PopularPostsManager extends React.Component{
     }
   }
 
+  componentWillMount(){
+    console.log("")
+  }
+  
 
   render(){
     return(

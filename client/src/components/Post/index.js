@@ -4,12 +4,12 @@ import './styles.scss';
 import SocialCard from '../SocialCard/SocialCard';
 import Comments from '../Comments'
 import CommentModal from '../Modal/CommentModal'
-import {FaPlusCircle} from 'react-icons/fa';
 import {Button} from 'reactstrap';
 
 class Post extends React.Component{
   constructor(props){
     super(props);
+    console.log(props);
     if(!(typeof this.props.location.postProps === 'undefined')){
       this.state = {
         data : props.location.postProps.data,

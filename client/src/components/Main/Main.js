@@ -12,7 +12,8 @@ class Main extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      newPost: false
+      newPost: false,
+      refresh: false
     }
 
     this.toggleNewPost = this.toggleNewPost.bind(this);
@@ -24,6 +25,8 @@ class Main extends React.Component{
     }))
     this.forceUpdate();
   }
+
+  
 
   render(){
     return(

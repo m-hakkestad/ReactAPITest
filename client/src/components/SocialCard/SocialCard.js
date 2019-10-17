@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardText, Row, Col } from 'reactstrap';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Route,Link } from "react-router-dom";
 import './styles.scss';
 import {FaComment} from 'react-icons/fa';
 import Upvote from '../sub-components/Upvote';
@@ -25,16 +25,27 @@ class SocialCard extends React.Component{
       formdate: inDate,
       score: props.post.score,
       commentids: props.post.commentids,
+      commentnums: props.post.commentids.length,
       comments: props.post.comments,
       update: false,
-      flow: props.flow
+      flow: props.flow,
+      refresh: true
     }
+
   }
 
   updateScore(inScore){
     this.setState({
       score: this.state.score + inScore
     })
+  }
+
+  componentWillMount(){
+    console.log("Socialcard Mount")
+  }
+
+  componentWillUnmount(){
+    console.log("Socialcard Unmount")
   }
 
 
@@ -66,7 +77,7 @@ class SocialCard extends React.Component{
             <Col className="socialCard-bottom-row-info"><Upvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
             <Col className="socialCard-bottom-row-info">{this.state.score}</Col>
             <Col className="socialCard-bottom-row-info"><Downvote id={this.state.id} onChange={this.updateScore.bind(this)}/></Col>
-            <Col className="socialCard-bottom-row-info"><FaComment/>{this.state.commentids.length}</Col>  
+            <Col className="socialCard-bottom-row-info"><FaComment/>{this.state.commentnums}</Col>  
           </Row>
           </Link>
         </Card>
