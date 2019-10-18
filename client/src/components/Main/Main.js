@@ -32,7 +32,7 @@ class Main extends React.Component{
     return(
         <div >
           <Router>
-            <Header title={"The best"}/>
+            <Header title={""}/>
             <Route exact path="/" component={NewPostsManager}/>
             <Route exact path="/hot" component={PopularPostsManager}/>
             <Route exact path="/post/:id" component={Post}/>

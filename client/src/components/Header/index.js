@@ -10,7 +10,7 @@ class Header extends React.Component{
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       collapsed: true,
-      title: props.title
+      title: ""
     };
 
   }
